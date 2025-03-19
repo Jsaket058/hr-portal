@@ -19,11 +19,11 @@ document.getElementById("loginForm").addEventListener("submit", async function (
         const data = await response.json();
 
         if (response.ok) {
-            // Store token if using JWT
-            localStorage.setItem("token", data.token); // Adjust based on response structure
+            // The token would be stored when I add JWT func.
+            localStorage.setItem("token", data.token);
             loginBox.style.animation = "fadeOut 0.8s ease-in-out";
             setTimeout(() => {
-                window.location.href = "dashboard.html"; // Redirect on success
+                window.location.href = "dashboard.html"; // Redirect on successful login
             }, 800);
         } else {
             errorMessage.textContent = data.message || "Invalid email or password!";
