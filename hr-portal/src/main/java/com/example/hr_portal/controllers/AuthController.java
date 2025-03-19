@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin(origins = "http://127.0.0.1:5500")
@@ -19,7 +20,7 @@ public class AuthController {
         String password = request.getPassword();
 
         if ("hr@company.com".equals(email) && "admin123".equals(password)) {
-            String token = "someRandomGeneratedToken"; // Replace with JWT logic later
+            String token = "someRandomGeneratedToken"; //I will replace it with JWT logic later
             return ResponseEntity.ok(Map.of("token", token, "message", "Login successful"));
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)

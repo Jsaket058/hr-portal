@@ -7,6 +7,6 @@ import java.util.List;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-    // Custom query to find employees by department (Optional)
+    // Example custom query to find employees by department
     List<Employee> findByDepartment(String department);
 }

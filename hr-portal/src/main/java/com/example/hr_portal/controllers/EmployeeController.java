@@ -31,6 +31,7 @@ public class EmployeeController {
     public void deleteEmployee(@PathVariable int id) {
         employeeService.deleteEmployee(id);
     }
+
     @PutMapping("/{id}")
     public ResponseEntity<Employee> editEmployee(@PathVariable int id, @RequestBody Employee updatedEmployee) {
         Employee employee = employeeService.updateEmployee(id, updatedEmployee);
