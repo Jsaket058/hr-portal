@@ -20,7 +20,7 @@ async function fetchEmployees() {
 }
 
 async function deleteEmployee(id) {
-    await fetch(`http://localhost:8080/employees/${id}`, { method: "DELETE" });
+    await fetch("http://localhost:8080/employees/${id}", { method: "DELETE" });
     fetchEmployees();
 }
 
@@ -53,7 +53,7 @@ async function updateEmployee() {
     let department = document.getElementById("editDepartment").value;
     let email = document.getElementById("editEmail").value;
     let salary = document.getElementById("editSalary").value;
-    await fetch(`http://localhost:8080/employees/${id}`, {
+    await fetch("http://localhost:8080/employees/${id}", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, department, email, salary })
